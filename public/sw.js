@@ -14,7 +14,7 @@ self.addEventListener('install', event => {
     'https://cdn.ampproject.org/v0/amp-list-0.1.js',
     'https://cdn.ampproject.org/v0/amp-mustache-0.2.js',
     'https://use.fontawesome.com/releases/v5.4.1/css/all.css',
-    'https://fonts.googleapis.com/css?family=Open+Sans',
+    'https://fonts.googleapis.com/css?family=Ubuntu',
     'index.html',
     '/'
   ];

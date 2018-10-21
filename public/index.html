@@ -17,8 +17,12 @@
     <!-- Basic information -->
     <link rel="canonical" href="https://rayriffy.com">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="Description" content="IVAO DevOps / Thailand Division Assistant Webmaster">
+    <meta name="theme-color" content="#90caf9">
+    <meta name="msapplication-navbutton-color" content="#90caf9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#90caf9">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="favicon.png" rel="shortcut icon">
     <link href="favicon.png" rel="apple-touch-icon-precomposed">
 
     <!-- Preconnect connections -->
@@ -36,9 +40,9 @@
 
     <!-- CSS -->
     <style amp-custom>
-      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+      @import url('https://fonts.googleapis.com/css?family=Ubuntu');
       body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
       }
       a {
         color: #333447;
@@ -52,6 +56,9 @@
       }
       .list-title {
         font-weight: bold;
+      }
+      .padding-left {
+        padding-left: 30px;
       }
       .post-entry {
         padding-top: 8px;
@@ -119,38 +126,57 @@
       <p class="center">IVAO DevOps / Thailand Division Assistant Webmaster</p>
       <p id="social-icon" class="center">
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="Github" rel="noopener" href="https://github.com/rayriffy"><i class="fab fa-github-square"></i></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="top" title="Blog" rel="noopener" href="https://blog.rayriffy.com"><i class="fas fa-newspaper"></i></a>
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="Facebook" rel="noopener" href="https://facebook.com/rayriffy"><i class="fab fa-facebook-square"></i></a>
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="Twitter" rel="noopener" href="https://twitter.com/rayriffy"><i class="fab fa-twitter-square"></i></a>
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="LINE" rel="noopener" href="https://line.me/ti/p/rayriffy"><i class="fab fa-line"></i></a>
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="Instagram" rel="noopener" href="https://instagram.com/r4yr1ffy"><i class="fab fa-instagram"></i></a>
-        <a target="_blank" data-toggle="tooltip" data-placement="top" title="Linkedin" rel="noopener" href="https://www.linkedin.com/in/rayriffy"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="top" title="Steam" rel="noopener" href="https://www.linkedin.com/in/rayriffy"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="top" title="Linkedin" rel="noopener" href="https://steamcommunity.com/id/r4yr1ffy"><i class="fab fa-steam-square"></i></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="top" title="Email" rel="noopener" href="mailto:contact@rayriffy.com"><i class="fas fa-envelope-square"></i></a>
       </p>
-
-      <!-- Blog -->
   
       <!-- Instagram pictures -->
       <h2>Instagram</h2>
-      <amp-list width="auto" height="250" layout="fixed-height" src="https://api.instagram.com/v1/users/self/media/recent/?access_token=4767265399.f92e4e3.76ba2c5cc5e94ffc91c10819a63fc97f"
-        items="." single-item=".">
-        <template type="amp-mustache">
-          <amp-carousel height="250" layout="fixed-height" type="carousel">
-            {{#data}}
-            <amp-img src="{{images.low_resolution.url}}" layout="fixed" width="250" height="250" alt="{{caption.text}}"></amp-img>
-            {{/data}}
-          </amp-carousel>
-        </template>
-        <div fallback>Failed to load images.</div>
-      </amp-list>
-  
-      <!-- GitHub repos -->
-      <h2>GitHub Repositories</h2>
-      <div class="container">
-        <amp-list width="auto" height="480" layout="fixed-height" src="https://api.github.com/users/rayriffy/repos?sort=updated"
-          items="." max-items="8">
+    </div>
+    <amp-list width="auto" height="250" layout="fixed-height" src="https://api.instagram.com/v1/users/self/media/recent/?access_token=4767265399.f92e4e3.76ba2c5cc5e94ffc91c10819a63fc97f"
+      items="." single-item=".">
+      <template type="amp-mustache">
+        <amp-carousel height="250" layout="fixed-height" type="carousel">
+          {{#data}}
+          <amp-img src="{{images.low_resolution.url}}" layout="fixed" width="250" height="250" alt="{{caption.text}}"></amp-img>
+          {{/data}}
+        </amp-carousel>
+      </template>
+      <div fallback>Failed to load images.</div>
+    </amp-list>
+    <div id="container">
+
+      <!-- Blog -->
+      <h2>Blog</h2>
+      <div class="padding-left">
+        <amp-list width="auto" height="300" layout="fixed-height" src="https://rayriffy-com.firebaseio.com/blog.json" items="." max-items="8">
           <template type="amp-mustache">
             <div class="post-entry">
               <span class="list-title">
-                <a href="{{html_url}}" rel="noopener" target="_blank">{{name}}</a>
+                <a href="{{urls}}" rel="noopener" target="_blank">{{name}}</a>
+              </span><br />
+              <span class="list-description">{{desc}}</span>
+            </div>
+          </template>
+          <div fallback>Failed to load blogs.</div>
+        </amp-list>
+        <a href="https://blog.rayriffy.com" target="_blank" rel="noopener" class="no-bold">More blogs</a>
+      </div>
+
+      <!-- GitHub repos -->
+      <h2>GitHub Repositories</h2>
+      <div class="padding-left">
+        <amp-list width="auto" height="480" layout="fixed-height" src="https://api.github.com/users/rayriffy/repos?sort=updated" items="." max-items="8">
+          <template type="amp-mustache">
+            <div class="post-entry">
+              <span class="list-title">
+                <i class="fab fa-github-alt"></i> <a href="{{html_url}}" rel="noopener" target="_blank">{{name}}</a>
               </span><br />
               <span class="list-description">{{description}}</span>
             </div>
