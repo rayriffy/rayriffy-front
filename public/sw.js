@@ -18,7 +18,7 @@ self.addEventListener('install', event => {
     'index.html',
     '/'
   ];
-  const cacheName = workbox.core.cacheNames.runtime;
+  const cacheName = 'rayriffy-v1';
   event.waitUntil(
     caches.open(cacheName).then(cache => cache.addAll(urls))
   );

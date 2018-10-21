@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>rayriffy</title>
+    <title>rayriffy | The front frontier of rayriffy.com</title>
 
     <!-- AMP components -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -52,7 +52,7 @@
         text-align: center;
       }
       .list-description {
-        font-size: 13px;
+        font-size: 14px;
       }
       .list-title {
         font-weight: bold;
@@ -61,8 +61,8 @@
         padding-left: 30px;
       }
       .post-entry {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
       .profile-image {
         border-radius: 40%;
@@ -139,8 +139,7 @@
       <!-- Instagram pictures -->
       <h2>Instagram</h2>
     </div>
-    <amp-list width="auto" height="250" layout="fixed-height" src="https://api.instagram.com/v1/users/self/media/recent/?access_token=4767265399.f92e4e3.76ba2c5cc5e94ffc91c10819a63fc97f"
-      items="." single-item=".">
+    <amp-list width="auto" height="250" layout="fixed-height" src="https://api.instagram.com/v1/users/self/media/recent/?access_token=4767265399.f92e4e3.76ba2c5cc5e94ffc91c10819a63fc97f" items="." single-item=".">
       <template type="amp-mustache">
         <amp-carousel height="250" layout="fixed-height" type="carousel">
           {{#data}}
@@ -155,7 +154,7 @@
       <!-- Blog -->
       <h2>Blog</h2>
       <div class="padding-left">
-        <amp-list width="auto" height="300" layout="fixed-height" src="https://rayriffy-com.firebaseio.com/blog.json" items="." max-items="8">
+        <amp-list width="auto" height="325" layout="fixed-height" src="https://rayriffy-com.firebaseio.com/blog.json" items="." max-items="8">
           <template type="amp-mustache">
             <div class="post-entry">
               <span class="list-title">
