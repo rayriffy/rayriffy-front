@@ -7,12 +7,14 @@
 
     <!-- AMP components -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
 
     <!-- Basic information -->
     <link rel="canonical" href="https://rayriffy.com">
@@ -59,6 +61,12 @@
       }
       .padding-left {
         padding-left: 30px;
+      }
+      .parallax-image-window {
+        overflow: hidden;
+      }
+      .parallax-image-window amp-img {
+        margin-bottom: -30%;
       }
       .post-entry {
         padding-top: 10px;
@@ -135,7 +143,29 @@
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="Linkedin" rel="noopener" href="https://steamcommunity.com/id/r4yr1ffy"><i class="fab fa-steam-square"></i></a>
         <a target="_blank" data-toggle="tooltip" data-placement="top" title="Email" rel="noopener" href="mailto:contact@rayriffy.com"><i class="fas fa-envelope-square"></i></a>
       </p>
-  
+
+      <!-- Parallax test -->
+      <div class="parallax-image-window">
+        <amp-position-observer on="scroll:parallaxTransition.seekTo(percent=event.percent)" intersection-ratios="0" layout="nodisplay">
+        </amp-position-observer>
+        <amp-img id="parallaxImage" width="auto" height="300" layout="fixed-height" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fparallax_min.JPG?alt=media&token=2a2c9781-01a9-41a5-aa2e-e6ed0146daea" alt="Parallax"></amp-img>
+      </div>
+      <amp-animation id="parallaxTransition" layout="nodisplay">
+        <script type="application/json">
+          {
+            "duration": "1",
+            "fill": "both",
+            "direction": "reverse",
+            "animations": [{
+              "selector": "#parallaxImage",
+              "keyframes": [{
+                "transform": "translateY(-30%)"
+              }]
+            }]
+          }
+        </script>
+      </amp-animation>
+
       <!-- Instagram pictures -->
       <h2>Instagram</h2>
     </div>
