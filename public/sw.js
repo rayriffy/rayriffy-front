@@ -7,6 +7,7 @@ workbox.routing.registerRoute(/\.(?:html)$/,
 self.addEventListener('install', event => {
   const urls = [
     'https://cdn.ampproject.org/v0/amp-analytics-0.1.js',
+    'https://cdn.ampproject.org/v0/amp-animation-0.1.js',
     'https://cdn.ampproject.org/v0/amp-bind-0.1.js',
     'https://cdn.ampproject.org/v0/amp-carousel-0.1.js',
     'https://cdn.ampproject.org/v0/amp-font-0.1.js',
