@@ -64,6 +64,7 @@
         padding-left: 30px;
       }
       .parallax-image-window {
+        height: 150px;
         overflow: hidden;
       }
       .parallax-image-window amp-img {
@@ -127,8 +128,8 @@
     <div id="container">
       <!-- Profile -->
       <p class="center">
-        <amp-img alt="Profile picture" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fprofile.webp?alt=media&token=763e3368-a95b-4aab-aea9-7e6f914b169a" width="125" height="125" layout="fixed" class="profile-image">
-          <amp-img alt="Profile picture" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fprofile.jpg?alt=media&token=1e0ec208-7c73-48d5-a52b-88f7d9431c22" width="125" height="125" layout="fixed" class="profile-image"></amp-img>
+        <amp-img alt="Profile picture" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fprofile.webp?alt=media" width="125" height="125" layout="fixed" class="profile-image">
+          <amp-img alt="Profile picture" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fprofile.jpg?alt=media" width="125" height="125" layout="fixed" class="profile-image"></amp-img>
         </amp-img>
       </p>
       <h3 class="center">PHUMRAPEE LIMPIANCHOP</h3>
@@ -150,7 +151,7 @@
       <div class="parallax-image-window">
         <amp-position-observer on="scroll:parallaxTransition.seekTo(percent=event.percent)" intersection-ratios="0" layout="nodisplay">
         </amp-position-observer>
-        <amp-img id="parallaxImage" width="2469" height="1804" layout="responsive" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fparallax_min.JPG?alt=media&token=2a2c9781-01a9-41a5-aa2e-e6ed0146daea" alt="Parallax"></amp-img>
+        <amp-img id="parallaxImage" width="2469" height="1804" layout="responsive" src="https://firebasestorage.googleapis.com/v0/b/rayriffy-com.appspot.com/o/img%2Fparallax_min.JPG?alt=media" alt="Parallax"></amp-img>
       </div>
       <amp-animation id="parallaxTransition" layout="nodisplay">
         <script type="application/json">
@@ -190,7 +191,7 @@
           <template type="amp-mustache">
             <div class="post-entry">
               <span class="list-title">
-                <a href="{{urls}}" rel="noopener" target="_blank">{{name}}</a>
+                <a href="{{slug}}" rel="noopener" target="_blank">{{name}}</a>
               </span><br />
               <span class="list-description">{{desc}}</span>
             </div>
